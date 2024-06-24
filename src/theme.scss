@@ -1,0 +1,255 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+@import url("palettes.scss");
+@include mat.core();
+
+
+$primary: (
+    50 : #e7f0ff,
+    100 : #c4dbff,
+    200 : #9dc3ff,
+    300 : #76aaff,
+    400 : #5898ff,
+    500 : #3b86ff,
+    600 : #357eff,
+    700 : #2d73ff,
+    800 : #2669ff,
+    900 : #1956ff,
+    A100 : #ffffff,
+    A200 : #fdfeff,
+    A400 : #cad7ff,
+    A700 : #b1c3ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$accent: (
+    50 : #e7faf3,
+    100 : #c3f4e0,
+    200 : #9ceccb,
+    300 : #74e4b6,
+    400 : #56dfa7,
+    500 : #38d997,
+    600 : #32d58f,
+    700 : #2bcf84,
+    800 : #24ca7a,
+    900 : #17c069,
+    A100 : #f3fff8,
+    A200 : #c0ffdc,
+    A400 : #8dffc0,
+    A700 : #74ffb2,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$success: (
+    50 : #e5f4e9,
+    100 : #bfe5c7,
+    200 : #94d3a2,
+    300 : #69c17d,
+    400 : #48b461,
+    500 : #28a745,
+    600 : #249f3e,
+    700 : #1e9636,
+    800 : #188c2e,
+    900 : #0f7c1f,
+    A100 : #aeffb8,
+    A200 : #7bff8b,
+    A400 : #48ff5e,
+    A700 : #2fff47,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$info: (
+    50 : #e3f4f6,
+    100 : #b9e3ea,
+    200 : #8bd1dc,
+    300 : #5dbecd,
+    400 : #3ab0c3,
+    500 : #17a2b8,
+    600 : #149ab1,
+    700 : #1190a8,
+    800 : #0d86a0,
+    900 : #077591,
+    A100 : #bef0ff,
+    A200 : #8be4ff,
+    A400 : #58d9ff,
+    A700 : #3fd3ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$danger: (
+    50 : #fff8e1,
+    100 : #ffecb5,
+    200 : #ffe083,
+    300 : #ffd451,
+    400 : #ffca2c,
+    500 : #ffc107,
+    600 : #ffbb06,
+    700 : #ffb305,
+    800 : #ffab04,
+    900 : #ff9e02,
+    A100 : #ffffff,
+    A200 : #fffaf2,
+    A400 : #ffe4bf,
+    A700 : #ffd9a6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$warn: (
+    50 : #fbe7e9,
+    100 : #f5c2c7,
+    200 : #ee9aa2,
+    300 : #e7727d,
+    400 : #e15361,
+    500 : #dc3545,
+    600 : #d8303e,
+    700 : #d32836,
+    800 : #ce222e,
+    900 : #c5161f,
+    A100 : #fff6f7,
+    A200 : #ffc3c6,
+    A400 : #ff9095,
+    A700 : #ff777c,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+.lightTheme {
+    $light-primary:mat.define-palette($primary);
+    $light-accent:mat.define-palette($accent);
+    $light-warn:mat.define-palette($warn);
+
+    $default-theme:mat.define-light-theme((
+    color:(
+        theme-type: light,
+        primary:$light-primary,
+        accent: $light-accent,
+        warn: $light-warn,
+    )
+    ));
+
+    @include mat.all-component-themes($default-theme);
+}
+
+.darkTheme {
+    $dark-primary:mat.define-palette($primary);
+    $dark-accent:mat.define-palette($accent);
+    $dark-warn:mat.define-palette($warn);
+
+    $default-theme:mat.define-dark-theme((
+        color:(
+            theme-type: dark,
+            primary:$dark-primary,
+            accent: $dark-accent,
+            warn: $dark-warn,
+        )
+    ));
+
+    @include mat.all-component-themes($default-theme);
+}
+
+:root{
+    --primary-color: #3b86ff;
+    --accent-color: #38d997 ;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --danger-color: #ffc107;
+    --warning-color: #dc3545;
+
+}
+
+.text-primary{ color: var(--primary-color); }
+.text-accent{ color: var(--accent-color); }
+.text-succes{ color: var(--succes-color); }
+.text-info{ color: var(--info-color); }
+.text-danger{ color: var(--danger-color); }
+.text-warning { color: var(--warning-color); }

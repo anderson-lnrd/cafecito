@@ -1,0 +1,14 @@
+.chat-container{
+    padding: 12px 24px;
+    .header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 48px
+    }
+
+    mat-form-field{
+        width: 100%;
+    }
+}

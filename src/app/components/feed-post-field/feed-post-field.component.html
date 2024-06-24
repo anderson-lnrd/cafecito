@@ -1,0 +1,29 @@
+<mat-card class="post-field">
+    <mat-card-content class="content">
+        <div colspan="1" class="avatar-area">
+            <div class="avatar"></div>
+        </div>
+        <div class="text-area">
+            <mat-form-field>
+                <mat-label [innerHTML]="postQuestion"></mat-label>
+                <textarea matInput type="text" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="8"></textarea>
+            </mat-form-field>
+        </div>
+    </mat-card-content>
+    <mat-card-actions colspan="12"  class="actions-area">
+        <div class="div" class="media-buttons">
+            <button mat-icon-button color="primary" matTooltip="Fotos">
+                <mat-icon>image</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" matTooltip="Vídeos">
+                <mat-icon>play_arrow</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" matTooltip="Evento">
+                <mat-icon>event</mat-icon>
+            </button>
+        </div>
+        <button mat-flat-button color="primary">
+            Publicar
+        </button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,79 @@
+@if(isLoading){
+    <mat-progress-bar class="progress-bar" mode="indeterminate"></mat-progress-bar>
+  }
+  <mat-grid-list [cols]="breakpoint ? 1 : 5" (window:resize)="onResize($event)">
+    @if(!breakpoint){
+      <mat-grid-tile colspan="3" class="login-banner">
+      </mat-grid-tile>
+    }
+    <mat-grid-tile class="login-form-tile" [colspan]="breakpoint ? 1 : 2">
+      <div class="login-form">
+
+        <div class="logo">
+            <img src="./../../../assets/img/logo.svg" alt="">
+        </div>
+        <h2>Acesse sua conta!</h2>
+        <form [formGroup]="loginForm">
+          <mat-form-field appearance="fill" class="form-item">
+            <mat-label>Usuário</mat-label>
+            <input matInput formControlName="username" placeholder="Usuário ou email">
+            @if(loginForm.get('username')?.hasError('required') && !loginForm.get('username')?.untouched){
+                <mat-hint class="text-warning"><b>Acho que esqueceu de me dizer quem você é!</b> Preencha esse campo para continuarmos!</mat-hint>
+            }
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill" class="form-item">
+            <mat-label>Senha</mat-label>
+            <input matInput formControlName="password" placeholder="Digite sua senha" min="6" [type]="fieldTextType() ? 'text' : 'password'">
+            <mat-icon matSuffix class="visibility" (click)="toggleFieldTextType()">
+                @if(fieldTextType()){
+                    visibility_off
+                } @else {
+                    visibility
+                }
+            </mat-icon>
+            @if(loginForm.get('password')?.hasError('required') && !loginForm.get('password')?.untouched){
+                <mat-hint class="text-warning"><b>Parece que você esqueceu a chave da porta!</b> Digite sua senha para entrar.</mat-hint>
+            }
+          </mat-form-field>
+    
+          <mat-checkbox>Lembrar senha</mat-checkbox>
+          @if(loginError()){
+              <div class="login-error-hint">
+                  <mat-hint class="text-warning"><b>Ops! Parece que algo deu errado no login.</b>  Vamos tentar de novo?</mat-hint>
+              </div>
+          }
+        </form>
+  
+        <button mat-raised-button color="primary" class="form-item" (click)="submit()" [disabled]="loginForm.invalid">
+          Login
+        </button>
+        <div class="third-party-auth">
+          <p>Ou entre com: </p>
+          <div class="third-party-buttons">
+            <button mat-icon-button color="accent">
+              <mat-icon>
+                <img src="./../assets/img/third-party/google.webp" alt="">
+              </mat-icon>
+            </button>
+            <button mat-icon-button color="accent">
+              <mat-icon>
+                <img src="./../assets/img/third-party/icloud.png" alt="">
+              </mat-icon>
+            </button>
+            <button mat-icon-button color="accent">
+              <mat-icon>
+                <img src="./../assets/img/third-party/facebook.png" alt="">
+              </mat-icon>
+            </button>
+            <button mat-icon-button color="accent">
+              <mat-icon>
+                <img src="./../assets/img/third-party/github.svg" alt="">
+              </mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  

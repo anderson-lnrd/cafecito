@@ -1,0 +1,24 @@
+<mat-drawer-container>
+    <mat-drawer #drawer mode="over" position="end">
+        <app-chat-toolbar></app-chat-toolbar>
+    </mat-drawer>
+
+    <app-toolbar></app-toolbar>
+
+    <div class="container">
+        <div class="col-left">
+            <app-side-toolbar class="side-toolbar"></app-side-toolbar>
+        </div>
+        <div class="col-feed">
+            <app-feed></app-feed>
+        </div>
+        <div class="col-right">
+            <app-suggested-friends></app-suggested-friends>
+        </div>
+    </div>
+    
+    <button mat-fab aria-label="Ver mensagens" class="chat-fab" color="accent" (click)="drawer.toggle()">
+        <mat-icon>chat</mat-icon>
+    </button>
+</mat-drawer-container>
+

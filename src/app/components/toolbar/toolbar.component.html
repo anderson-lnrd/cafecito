@@ -1,0 +1,58 @@
+<mat-toolbar class="toolbar">
+    <div class="brand-tile">
+        <button mat-icon-button color="primary">
+            <mat-icon>home</mat-icon>
+        </button>
+        <mat-form-field>
+            <input matInput placeholder="Pesquisar...">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="tools-tile">
+        <button mat-icon-button color="primary">
+            <mat-icon>chat</mat-icon>
+        </button>
+        <button mat-icon-button color="primary">
+            <mat-icon>notifications</mat-icon>
+        </button>
+        <button mat-icon-button class="avatar" [matMenuTriggerFor]="menu">
+            <mat-icon>
+            </mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>
+        <mat-icon color="primary">person</mat-icon>
+        Ver Perfil
+    </button>
+    <button mat-menu-item>
+      <mat-icon color="primary">settings</mat-icon>
+      Configurações e privacidade
+    </button>
+    <button mat-menu-item>
+      <mat-icon color="primary">support</mat-icon>
+      Suporte
+    </button>
+    <button mat-menu-item>
+      <mat-icon color="primary">article</mat-icon>
+      Documentação
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+        <mat-icon color="primary">logout</mat-icon>
+        Sair
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="toggleTheme()">
+        <mat-icon color="primary">
+            @if(themeService.theme == 'lightTheme'){
+                light_mode
+            } @else {
+                dark_mode
+            }
+        </mat-icon>
+        Tema
+    </button>
+  </mat-menu>

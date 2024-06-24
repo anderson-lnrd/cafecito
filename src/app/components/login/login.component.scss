@@ -1,0 +1,70 @@
+@use '@angular/material' as mat;
+@import url('./../../../theme.scss');
+mat-grid-list{
+    position: relative;
+    padding: 0!important;
+    height: 100vh;
+
+    .login-banner{
+        background-color: #e7f0ff;
+        background-image: url('./../../../assets/img/signin.svg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    mat-grid-tile {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+    }
+}
+
+.login-form-tile{
+    .login-form{
+        width: 75%;
+    
+        h1{
+            margin-bottom: 30px!important;
+        }
+    
+        button.form-item {
+            width: 100%;
+        }
+    
+        .form-item{
+            width: 100%;
+            margin-bottom: 12px;
+        }
+    }
+
+    .third-party-auth {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+
+
+.progress-bar{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.login-error-hint{
+    width: 100%;
+    margin: 12px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+    img{
+        width: 50%;
+    }
+}

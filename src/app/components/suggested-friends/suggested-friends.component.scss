@@ -1,0 +1,26 @@
+.suggestions-card{
+    position: fixed;
+    width: 18%;
+
+    .header{
+        padding: 0 12px;
+    }
+    .avatar {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-image: url('https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    mat-list-item{
+        display: flex;
+    }
+
+    button{
+        width: 100%;
+        margin-bottom: 6px;
+    }
+}

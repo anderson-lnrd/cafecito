@@ -1,0 +1,39 @@
+@use '@angular/material' as mat;
+@include mat.core();
+.toolbar{
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+    top: 0;
+    padding: 0 15%;
+    .brand-tile{
+        display: flex!important;
+        justify-content: start!important;
+        align-items: center;
+        width: 40%;
+
+        mat-form-field{
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        @include mat.form-field-density(-4);
+    }
+
+    .tools-tile{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-image: url('https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+}
+

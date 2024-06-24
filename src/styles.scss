@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body.lightTheme{
+    background-color: #eeeeee;
+
+    .toolbar{
+        background-color: white;
+    }
+}
+
+body.darkTheme{
+    background-color: #303030;
+    h1, h2, h3, h4, h5, h6{
+        color: white;
+    }
+}
+
+mat-form-field mat-hint {
+    font-size: 11px;
+}
+
+mat-icon.visibility{
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
